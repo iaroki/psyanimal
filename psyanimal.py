@@ -187,6 +187,10 @@ def ddt_result():
             {{answers_dict[key]}}</li>
         %end
         </ul>
+        <br>
+        <form action="http://127.0.0.1:9999">
+            <input type="submit" value="Назад" />
+        </form>
         </body></html>
         ''', name=name.encode('iso-8859-1'), desc=desc.encode('iso-8859-1'), data=data, questions_dict=questions_dict, answers_dict=answers_dict)
 
