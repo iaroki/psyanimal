@@ -45,7 +45,7 @@ def ddt_result():
         Описание: {{desc}}<br></h3>
         <ul>
         % for key in data:
-            <li><h4><b>{{questions_dict[key][0]}}</b></h4>
+            <li><b>{{questions_dict[key][0]}}</b><br>
             {{questions_dict[key][1]}}</li>
         % end
         </ul>
