@@ -43,14 +43,12 @@ def ddt_result():
         <title>Тест "Несуществующее животное"</title></head>
         <h3>Имя: {{name}}<br>
         Описание: {{desc}}<br></h3>
-        <h4>
         <ul>
         % for key in data:
-            <li><b>{{questions_dict[key][0]}}</b><br>
+            <li><h4><b>{{questions_dict[key][0]}}</b></h4>
             {{questions_dict[key][1]}}</li>
-        %end
+        % end
         </ul>
-        </h4>
         <br>
         <form action="http://127.0.0.1:9999">
             <input type="submit" value="Назад" />
