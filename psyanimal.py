@@ -1,7 +1,8 @@
 import json
+import codecs
 from bottle import route, run, template, request, error, static_file
 
-with open('questions.json', 'r') as jsonfile:
+with codecs.open('questions.json', 'r', encoding='utf-8') as jsonfile:
     questions_dict = json.load(jsonfile)
 
 @route('/<filename:re:.*\.(css|ico)>')
