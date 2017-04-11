@@ -51,7 +51,7 @@ def ddt_result():
         % end
         </ul>
         <br>
-        <form action="http://127.0.0.1:9999">
+        <form action="http://0.0.0.0:9999">
             <input type="submit" value="Назад" />
         </form>
         </body></html>
@@ -61,4 +61,4 @@ def ddt_result():
 def error404(error):
     return 'Nothing here, sorry'
 
-run(host='localhost', port=9999, reloader=True, debug=False)
+run(host='0.0.0.0', port=9999, reloader=True, debug=False)
