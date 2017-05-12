@@ -1,6 +1,9 @@
+import sys
 import json
 import codecs
+from threading import Thread
 from bottle import route, run, template, request, error, static_file
+from cefpython3 import cefpython as cef
 
 with codecs.open('questions.json', 'r', encoding='utf-8') as jsonfile:
     questions_dict = json.load(jsonfile)
@@ -61,4 +64,15 @@ def ddt_result():
 def error404(error):
     return 'Nothing here, sorry'
 
-run(host='0.0.0.0', port=9999, reloader=True, debug=False)
+t = Thread(target=run, kwargs=dict(host='localhost', port=9999))
+t.daemon = True
+t.start()
+
+sys.excepthook = cef.ExceptHook
+cef.initialize()
+cef.CreateBrowserSync(url='localhost:9999')
+cef.MessageLoop()
+cef.Shutdown()
+
+#run(host='0.0.0.0', port=9999, reloader=True, debug=False)
+
