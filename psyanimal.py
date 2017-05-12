@@ -71,7 +71,7 @@ t.daemon = True
 t.start()
 
 sys.excepthook = cef.ExceptHook
-cef.initialize()
+cef.Initialize()
 cef.CreateBrowserSync(url='localhost:9999')
 cef.MessageLoop()
 cef.Shutdown()
