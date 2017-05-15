@@ -72,7 +72,7 @@ t.start()
 
 sys.excepthook = cef.ExceptHook
 cef.Initialize()
-cef.CreateBrowserSync(url='localhost:9999')
+cef.CreateBrowserSync(url='localhost:9999', window_title='Psyanimal')
 cef.MessageLoop()
 cef.Shutdown()
 
